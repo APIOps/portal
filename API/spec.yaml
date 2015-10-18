@@ -64,7 +64,7 @@ paths:
       produces:
         - application/json
       parameters:
-        - name: pet
+        - name: event
           in: body
           description: Event to be added
           required: true
