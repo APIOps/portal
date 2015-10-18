@@ -37,6 +37,9 @@ paths:
           collectionFormat: csv
         - name: limit
           in: query
+          default: 10
+          minimum: 10
+          maximum: 100
           description: maximum number of results to return
           required: false
           type: integer
@@ -132,9 +135,9 @@ paths:
           format: int64
       responses:
         '200':
-          description: event response
-          title: Participants
+          description: events response
           schema:
+            title: Participants
             type: array
             items:
               $ref: '#/definitions/participant'
@@ -157,6 +160,7 @@ definitions:
         type: string
       participantCount:
         type: integer
+        format: int64
       imageUrl:
         type: string
       eventUrl:
