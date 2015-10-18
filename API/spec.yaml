@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 1.0.0
+  version: 0.0.1
   title: APIOps Events (Simple)
   description: A simple API for retrieving APIOps events information (swagger-2.0 specification)
   termsOfService: 'http://apiops/terms/'
@@ -46,6 +46,7 @@ paths:
           description: event response
           schema:
             type: array
+            title: Events
             items:
               $ref: '#/definitions/event'
         default:
@@ -132,6 +133,7 @@ paths:
       responses:
         '200':
           description: event response
+          title: Participants
           schema:
             type: array
             items:
