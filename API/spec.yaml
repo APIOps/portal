@@ -11,7 +11,7 @@ info:
   license:
     name: MIT
     url: 'http://opensource.org/licenses/MIT'
-host: apinf.io
+host: apiops.net:8088
 basePath: /apiopsevents
 schemes:
   - http
@@ -56,10 +56,9 @@ paths:
           description: unexpected error
           schema:
             $ref: '#/definitions/errorModel'
-
-  '/event':
+  /event:
     post:
-      description: Creates a new event in the portal.  
+      description: Creates a new event in the portal.
       operationId: addPet
       produces:
         - application/json
@@ -81,7 +80,7 @@ paths:
             $ref: '#/definitions/errorModel'
   '/event/{id}':
     get:
-      description: 'Returns details of one event'
+      description: Returns details of one event
       operationId: findPetById
       produces:
         - application/json
@@ -118,11 +117,9 @@ paths:
           description: unexpected error
           schema:
             $ref: '#/definitions/errorModel'
-            
-
   '/event/{id}/participants':
     get:
-      description: 'Returns participants of one event'
+      description: Returns participants of one event
       operationId: findEventParticipantsById
       produces:
         - application/json
@@ -145,7 +142,6 @@ paths:
           description: unexpected error
           schema:
             $ref: '#/definitions/errorModel'
-            
 definitions:
   event:
     type: object
@@ -165,22 +161,22 @@ definitions:
         type: string
       eventUrl:
         type: string
-      class: 
-        type: string 
+      class:
+        type: string
       city:
         type: string
       address:
         type: string
-      zipcode: 
+      zipcode:
         type: string
-      description: 
+      description:
         type: string
       startdate:
         type: string
         format: date
       enddate:
         type: string
-        format: date      
+        format: date
   newEvent:
     type: object
     required:
@@ -193,14 +189,14 @@ definitions:
         type: string
       city:
         type: string
-      description: 
+      description:
         type: string
       startdate:
         type: string
         format: date
       enddate:
         type: string
-        format: date 
+        format: date
   participant:
     type: object
     required:
@@ -211,7 +207,6 @@ definitions:
         format: int64
       name:
         type: string
-  
   errorModel:
     type: object
     required:
